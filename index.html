@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="popup" class="popup">
+
+    <div class="popup-window">
+      <i id="closeIcon" class="fa fa-times closeIcon"></i>
+      <div class="radios">
+        <div>
+          <input type="radio" id="color-1" name="color" value="color-1" checked>
+          <label for="color-1">
+            <span>
+              <img class="check" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                alt="Checked Icon" />
+            </span>
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="color-2" name="color" value="color-2">
+          <label for="color-2">
+            <span>
+              <img class="check" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                alt="Checked Icon" />
+            </span>
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="color-3" name="color" value="color-3">
+          <label for="color-3">
+            <span>
+              <img class="check" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                alt="Checked Icon" />
+            </span>
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="color-4" name="color" value="color-4">
+          <label for="color-4">
+            <span>
+              <img class="check" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                alt="Checked Icon" />
+            </span>
+          </label>
+        </div>
+      </div>
+      <!-- 
+            <label class="popup-main-text">New Note</label> -->
+
+      <p class="popup-text">Title:</p>
+      <input id="noteTitle" type="text"></input>
+      <p class="popup-text">Add content:</p>
+      <textarea id="noteContent" rows="5" cols="10"></textarea>
+      <input id="popupBtn" type="submit" value="Submit">
+    </div>
+  </div>
+  <div class="wrapper">
+    <header class="header">
+      <h1><a href="#">My notepad</a></h1>
+      <button id="newBtn" class="button"><i class="fa fa-plus icon"></i>new note</button>
+      <input class="searchBox" type="text" placeholder="Search">
+    </header>
+    <div id="notes" class="table grid">
+
+    </div>
+    <script type="module" src="main.js"></script>
+
+  </div>
+
+</body>
+
+</html>
