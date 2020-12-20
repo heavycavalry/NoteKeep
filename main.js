@@ -19,29 +19,58 @@ popUpBtn.addEventListener("click", submit);
 
 
 function openPopUp() {
-    document.getElementById("popup").style.display = "flex";
+  document.getElementById("popup").style.display = "flex";
 }
 
 function closePopUp() {
-    document.getElementById("popup").style.display = "none";
+  document.getElementById("popup").style.display = "none";
 }
 
 function submit() {
-    let noteTitle = document.getElementById("noteTitle");
-    let noteContent = document.getElementById("noteContent");
-    let title = noteTitle.value;
-    let content = noteContent.value;
-    let note = new Note(title, content);
-    notes.addNote(note);
+  let noteTitle = document.getElementById("noteTitle");
+  let noteContent = document.getElementById("noteContent");
+  let title = noteTitle.value;
+  let content = noteContent.value;
+  let note = new Note(title, content);
+  notes.addNote(note);
 }
 
-let colors = document.querySelectorAll('img');
 
-colors.forEach(function (color) {
-  color.addEventListener("click", function() {
-    color.classList.add("checked");
-  });
-});
+// let n = document.querySelectorAll('closeIcons');
+
+// n.forEach(function (icon) {
+//   icon.addEventListener("click", function () {
+//     thisnote = icon.parentElement;
+//     removeNote(thisnote);
+//   });
+// });
 
 
+const select = document.querySelector("select");
+const note = document.querySelector("note");
 
+select.style.border = "thick solid #ff5252";
+select.style.color = "black";
+
+select = onchange = function () {
+  const choice = select.value;
+
+  switch (choice) {
+    case "red":
+      update("#ff5252");
+      break;
+    case 'yellow':
+      update("#ebe85d");
+      break;
+    case 'purple':
+      update("#b367e6");
+      break;
+    case 'blue':
+      update("#6d6dec");
+      break;
+  }
+}
+
+function update(color) {
+  select.style.border = `thick solid ${color}`;
+}

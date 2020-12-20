@@ -31,8 +31,10 @@ export default class Notes {
         this.db.save(this.notes);
     }
 
-    removeNote(id) {}
-
+    removeNote(note) {
+        this.notes.map();
+    }
+    
     getNotes() {
         return this.notes;
     }
@@ -41,8 +43,6 @@ export default class Notes {
         return this.notes.find(el => el.id === id)
     }
 }
-
-
 
 
 console.log("notes")
