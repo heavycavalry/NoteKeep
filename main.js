@@ -29,9 +29,11 @@ function closePopUp() {
 function submit() {
   let noteTitle = document.getElementById("noteTitle");
   let noteContent = document.getElementById("noteContent");
+  let noteColor = document.querySelector("option");
   let title = noteTitle.value;
   let content = noteContent.value;
-  let note = new Note(title, content);
+  let color = noteColor.value;
+  let note = new Note(title, content, color);
   notes.addNote(note);
 }
 
@@ -47,25 +49,27 @@ function submit() {
 
 
 const select = document.querySelector("select");
-const note = document.querySelector("note");
 
 select.style.border = "thick solid #ff5252";
 select.style.color = "black";
 
-select = onchange = function () {
+select.onchange = function () {
   const choice = select.value;
 
   switch (choice) {
-    case "red":
+    case "#ff5252":
       update("#ff5252");
       break;
-    case 'yellow':
+    case "white":
+      update("white");
+      break;
+    case '#ebe85d':
       update("#ebe85d");
       break;
-    case 'purple':
+    case '#b367e6':
       update("#b367e6");
       break;
-    case 'blue':
+    case '#6d6dec':
       update("#6d6dec");
       break;
   }

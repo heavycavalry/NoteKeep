@@ -13,19 +13,21 @@ export default class Notes {
     }
 
     createNote(title, text) {
+        let select = document.querySelector("select");
+        let color = select.value;
         let table = document.getElementById("notes");
         const div = document.createElement("div.note");
-        div.innerHTML = `<div class="note">
-        <i class="fa fa-times closeIcons"></i>
-        <h2 class="title">${title}</h2>
-        <p class="text">${text}</p>
-    </div>`
+        div.innerHTML = 
+        `<div class="note" style="background-color: ${color};">
+            <i class="fa fa-times closeIcons"></i>
+            <h2 class="title">${title}</h2>
+            <p class="text">${text}</p>
+        </div>`
         table.appendChild(div);
     }
 
 
     addNote(note) {
-        console.log(note)
         this.createNote(note.title, note.text);
         this.notes.push(note);
         this.db.save(this.notes);

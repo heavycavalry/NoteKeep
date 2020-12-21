@@ -178,6 +178,7 @@ select {
 }
 
 select {
+    width: 7em;
     font-size: 1.5rem;
     color: var(--white);
     padding: 0.2rem;
